@@ -1,0 +1,5 @@
+LOG:  database system was shut down at 2016-07-29 22:06:23 CLT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "rails_prueba_3_development" does not exist
