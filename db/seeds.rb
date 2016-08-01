@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+UserSong.destroy_all
+Song.destroy_all
+Genre.destroy_all
+User.destroy_all
+
+users = User.create([{ email: 'rcereced@gmail.com', name: 'Rodrigo', password: '123456' }, { email: 'rodrigo@desafiolatam.com', name: 'Rodrigo', password: '123456' }])
+
+genres = Genre.create([{ name: 'Rock' }, { name: 'Hip-Hop' }, { name: 'Electrónica' }])
+
+#Pokemon.create([{ user: users.first, catalog: catalogs.first, level: 10 }, { user: users.first, catalog: catalogs.first, level: 12 }, { user: users.first, catalog: catalogs.second, level: 5 }])
