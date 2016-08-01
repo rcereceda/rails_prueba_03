@@ -4,7 +4,7 @@ class UserSongsController < ApplicationController
   # GET /user_songs
   # GET /user_songs.json
   def index
-    @user_songs = UserSong.where(user: current_user)
+    @user_songs = UserSong.where(user: User.find(params[:user_id]))
   end
 
   # GET /user_songs/1

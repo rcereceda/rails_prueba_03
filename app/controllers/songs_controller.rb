@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
   	genre = params[:genre_id]
+  	oder = params[:order]
 
   	if genre.present?
   		@songs = Song.where(genre_id: genre)
