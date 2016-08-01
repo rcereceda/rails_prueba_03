@@ -5,7 +5,14 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+  	genre = params[:genre_id]
+
+  	if genre.present?
+  		@songs = Song.where(genre_id: genre)
+		else
+			@songs = Song.all
+		end
+
     @user = current_user
     @user_song = UserSong.new
   end
