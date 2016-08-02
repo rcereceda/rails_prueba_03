@@ -13,6 +13,7 @@
     <% @user_songs.each do |user_song| %>
       <tr>
         <td><%= user_song.song.name %></td>
+        <td><%= link_to "Quitar canción", remove_user_user_song_path(current_user.id, user_song.id) %></td>
       </tr>
     <% end %>
   </tbody>

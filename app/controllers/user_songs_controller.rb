@@ -1,6 +1,12 @@
 class UserSongsController < ApplicationController
   before_action :set_user_song, only: [:show, :edit, :update, :destroy]
 
+  def remove
+    @user = User.find(params[:user_id])
+    @user_song = UserSong.find(params[:id])
+    @user_song.destroy
+    redirect_to user_user_songs_path(@user.id)
+  end
   # GET /user_songs
   # GET /user_songs.json
   def index
