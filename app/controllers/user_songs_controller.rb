@@ -1,11 +1,16 @@
 class UserSongsController < ApplicationController
   before_action :set_user_song, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :user
+  load_and_authorize_resource :user_song, through: :user
 
   def remove
     @user = User.find(params[:user_id])
     @user_song = UserSong.find(params[:id])
-    @user_song.destroy
-    redirect_to user_user_songs_path(@user.id)
+    if @user_song.destroy
+      redirect_to user_user_songs_path(@user.id), notice: "Lo lograste"
+    else
+      redirect_to user_user_songs_path(@user.id), notice: "No puedes borrarla"
+    end
   end
   # GET /user_songs
   # GET /user_songs.json

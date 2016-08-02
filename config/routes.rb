@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'pages/error'
+
   #get 'users/index'
 
   devise_for :users, controllers: {
@@ -11,8 +13,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :user_songs do
       member do
-      get 'remove'
-    end
+        get 'remove'
+      end
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

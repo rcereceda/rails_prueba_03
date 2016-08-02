@@ -15,4 +15,6 @@ users = User.create([{ email: 'rcereced@gmail.com', name: 'Rodrigo', password: '
 
 genres = Genre.create([{ name: 'Rock' }, { name: 'Hip-Hop' }, { name: 'Electrónica' }])
 
-#Pokemon.create([{ user: users.first, catalog: catalogs.first, level: 10 }, { user: users.first, catalog: catalogs.first, level: 12 }, { user: users.first, catalog: catalogs.second, level: 5 }])
+songs = Song.create([{ name: 'Shot in the dark', genre: genres[0], duration: 200 }, { name: 'The man who sold the world', genre: genres[0], duration: 200 }, { name: 'Got the life', genre: genres[0], duration: 200 }, { name: 'Insane', genre: genres[1], duration: 200 }, { name: 'Dance', genre: genres[2], duration: 200 }])
+
+UserSong.create([{ user: users[0], song: songs[0] }, { user: users[0], song: songs[1] }, { user: users[0], song: songs[2] }, { user: users[1], song: songs[3] }, { user: users[1], song: songs[4] }])
